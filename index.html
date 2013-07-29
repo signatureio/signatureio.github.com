@@ -4,66 +4,109 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Signature.io | The API platform for signing documents</title>
+
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+  <link href='http://fonts.googleapis.com/css?family=Domine:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="stylesheets/application.css">
+
+  <script src="javascripts/rainbow.min.js"></script>
 </head>
 <body>
-<h1>Signature.io</h1>
+  <div class="pure-g-r">
+    <div class="pure-u-1-6">
+    </div>
 
-<p>Signature.io is the API Platform for Signing Documents.</p>
+    <div class="pure-u-2-3">
+      <div class="content">
+        <p class="center-text">
+          <img src="images/signature-logo-0.jpg" alt="Signature.io Logo">
+        </p>
 
-<h2>Signing Up</h2>
+        <p>Signature.io is <strong>the API Platform for signing documents</strong>. Use Signature.io to integrate e-signing into your web or mobile application in minutes instead of months.</p>
+        
+        <p class="center-text">
+          <a class="pure-button" href="/docs" target="_blank">View Documentation</a>
+          <a class="pure-button pure-button-primary" href="https://www.signature.io/try" target="_blank">Sign the Demo</a>
+        </p>
 
-<p>To create your account do the following, replacing the filler information with your information. This will return an API key for your use. See <a href="/docs">documentation</a> for more details.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-<code>
-curl -X POST https://www.signature.io/api/v0/people.json \
--d "first_name=YOUR_FIRST_NAME" \
--d "email=YOUR_EMAIL" \
--d "password=YOUR_PASSWORD"
-</code>
+        <h2>Get Started</h2>
 
-<h2>Help &amp; Support</h2>
+        <p>Using Signtaure.io is simple. You begin by creating your account.</p>
 
-<p>If you need help, please get in touch with us at <a href="mailto:support@signature.io">support@signature.io</a>.</p>
+        <pre><code data-language="javascript">curl -X POST https://www.signature.io/api/v0/people.json \ 
+  -d "first_name=YOUR_FIRST_NAME" \ 
+  -d "email=YOUR_EMAIL" \ 
+  -d "password=YOUR_PASSWORD"</code></pre>
+        
+        <p>On a success response, you will receive your <code>secret_api_key</code> and your <code>public_api_key</code>. Use your secret key in the next step.</p>
 
-<h2>Blog</h2>
+        <pre><code data-language="javascript">curl -X POST https://www.signature.io/api/v0/documents.json \ 
+  -u YOUR_SECRET_KEY: \ 
+  -d "url=https://www.signature.io/pdfs/sign-below.pdf"</code></pre>
 
-<p>We maintain a <a href="http://signatureio.tumblr.com/">blog</a>. Please read and subscribe to it.</p>
+        <p>On a success response, you will receive a <code>share_url</code>. Visit or share the <code>share_url</code> with the person you need to sign the document.<p>
 
-<h2>Pricing</h2>
+        <p>That's it. You are done. You will be notified by email when the document is signed.</p> 
 
-<p>We are still working on pricing. This will not be a free product forever.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+       
+        <h2>Learn More</h2>
 
-<h2>Documentation</h2>
+        <p>When you <a href="http://en.wikipedia.org/wiki/POST_(HTTP)">POST</a> to <code>/api/v0/documents.json</code>, Signature.io responds with the <code>share_url</code>. That <code>share_url</code> contains the special HTML5 document. It works on all modern devices - phones, tablets, and computers. Signers don’t have to download anything or learn new software.</p>
 
-<p>You can find all the documentation for Signature.io <a href="/docs">here</a>.</p>
+        <h3>Help &amp; Support</h3>
 
-<h2>Libraries</h2>
+        <p>If you need help, please get in touch with us at <a href="mailto:support@signature.io">support@signature.io</a>.</p>
 
-<p>It is nice to have helper libraries in the language of your choice. We've built the following for you.</p>
+        <h3>Pricing</h3>
 
-<ul>
-  <li>
-    <a href="/signatureio-ruby">signatureio-ruby</a>
-  </li>
-  <li>
-    <a href="/signatureio-node">signatureio-node</a>
-  </li>
-</ul>
+        <p>We are still working on pricing. There will likely be a per document fee.</p>
+
+        <h3>Libraries</h3>
+
+        <p>It is nice to have helper libraries in the language of your choice. We've built the following for you.</p>
+
+        <ul>
+          <li>
+            <a href="/signatureio-ruby">signatureio-ruby</a>
+          </li>
+          <li>
+            <a href="/signatureio-node">signatureio-node</a>
+          </li>
+        </ul>
+
+        <h3>Open Source</h3>
+
+        <p>We contribute to open source. Here are some of the libraries we have open sourced.</p>
+
+        <ul>
+          </li>
+          <li>
+            <a href="/wix">wix</a>
+          </li>
+          <li>
+            <a href="/digitalocean">digitalocean</a>
+          </li>
+        </ul>
+
+        <h3>Blog</h3>
+
+        <p>We maintain a <a href="http://signatureio.tumblr.com/">blog</a>. Please read and subscribe to it.</p>
+
+      </div>
+    </div>
+  </div>
 
 
-<h3>Open Source</h3>
 
-<p>We contribute to open source. Here are some of the libraries we have open sourced.</p>
 
-<ul>
-  </li>
-  <li>
-    <a href="/wix">wix</a>
-  </li>
-  <li>
-    <a href="/digitalocean">digitalocean</a>
-  </li>
-</ul>
 </body>
 </html>
