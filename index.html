@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="wNep5ZcFdIJ5iwRdHk0dYO3IGeisGKzY_hC2mRzFK-w" />
   <title>Signature.io | The API platform for signing documents</title>
-
   <link rel="stylesheet" href="stylesheets/mot.css">
-
-  <script src="javascripts/rainbow.min.js"></script>
 </head>
 <body>
   <img src="images/signature-logo-0.jpg" alt="Signature.io Logo">
@@ -16,44 +13,22 @@
   <div class="content">
 
     <p>Signature.io is an <strong>API Platform for signing documents</strong>. Use Signature.io to integrate e-signing into your web or mobile application in minutes instead of months.</p>
-    <!--
-    <p class="center-text">
-      <a class="pure-button" href="/docs" target="_blank">View Documentation</a>
-      <a class="pure-button pure-button-primary" href="https://www.signature.io/try" target="_blank">Sign the Demo</a>
-    </p>
-    -->
     <br/>
     <br/>
 
     <h2>Get Started</h2>
 
-    <p>Using Signtaure.io is simple. You begin by creating your account.</p>
+    <p>Signature.io is simple to use. <strong>Create a signable document with just one API call.</strong></p>
 
-    <pre><code data-language="javascript">curl -X POST https://www.signature.io/api/v0/people.json \ 
--d "first_name=YOUR_FIRST_NAME" \ 
--d "email=YOUR_EMAIL" \ 
--d "password=YOUR_PASSWORD"</code></pre>
-    
-    <p>On a success response, you will receive your <code>secret_api_key</code> and your <code>public_api_key</code>. Use your secret key in the next step.</p>
+    <pre><code>curl http://signature-api.herokuapp.com/api/v0/documents/create.json?url=http://mot.la/assets/resume.pdf</code></pre>
 
-    <pre><code data-language="javascript">curl -X POST https://www.signature.io/api/v0/documents.json \ 
--u YOUR_SECRET_KEY: \ 
--d "url=https://www.signature.io/pdfs/sign-below.pdf"</code></pre>
+    <p>Signature.io responds with a <code>share_url</code>. <strong>Visit that url and sign your document.</strong><p>
 
-    <p>On a success response, you will receive a <code>share_url</code>. Visit or share the <code>share_url</code> with the person you need to sign the document.<p>
-
-    <p>That's it. You are done. You will be notified by email when the document is signed.</p> 
+    <p>That's it!</p>
 
     <br/>
     <br/>
    
-    <h2>Learn More</h2>
-
-    <p>When you <a href="http://en.wikipedia.org/wiki/POST_(HTTP)">POST</a> to <code>/api/v0/documents.json</code>, Signature.io responds with the <code>share_url</code>. That <code>share_url</code> contains the special HTML5 document. It works on all modern devices - phones, tablets, and computers. Signers don’t have to download anything or learn new software.</p>
-
-    <br/>
-    <br/>
-
     <h2>Help &amp; Support</h2>
 
     <p>If you need help, please get in touch with me at <a href="mailto:mot@mot.la">mot@mot.la</a>.</p>
@@ -78,6 +53,9 @@
     <br/>
 
     <h2>Architecture</h2>
+
+    <p>Signature.io is completely open sourced. It takes a service oriented approach to it's architecture. Much of it is actually a "webhook driven architecture".</p>
+
     <ul>
       <li>
         <a href="https://github.com/motdotla/signature-api">signature-api</a>
@@ -138,10 +116,10 @@
 
     <h2>Supporting External Services</h2>
     <ul>
-      <li><a href="http://iron.io">iron.io</a></li>
-      <li><a href="http://orchestrate.io">orchestrate.io</a></li>
       <li><a href="http://aws.amazon.com/s3/">Amazon S3</a></li>
       <li><a href="https://github.com/motdotla/heroku-buildpack-mupdf">Heroku buildpack: MuPDF</a></li>
+      <li><a href="http://iron.io">Iron.io</a></li>
+      <li><a href="http://orchestrate.io">Orchestrate.io</a></li>
     </ul>
 
   </div>
